@@ -8,6 +8,32 @@ body {
     padding: 0;
 }
 
+.navbar {
+    box-shadow: 3px 2px 10px 0px #ddd;
+}
+
+.footer {
+    box-shadow: 3px 2px 10px 0px #ddd;
+}
+
+.footer_left {
+    width: 50%;
+    float: left;
+}
+
+.footer_right {
+    width: 40%;
+    float: right;
+}
+
+.h6_footer_left {
+    margin-left: 100px;
+}
+
+.h6_footer_right {
+    margin-left: 122px;
+}
+
 .nav-link {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
