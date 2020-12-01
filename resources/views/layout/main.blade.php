@@ -27,13 +27,12 @@
                     <a class="nav-link mr-3" href="#">Register</a>
                 </div>
             </div>
-
-            @yield('content')
         </div>
     </nav>
+    @yield('content')
     <footer>
-        <div class="container">
-            <div class="footer">
+        <div class="footer">
+            <div class="container">
                 <div class="footer_left">
                     <h6>Narahubung: LINE: itsevent</h6>
                     <h6 class="h6_footer_left">Instagram: itsevent</h6>

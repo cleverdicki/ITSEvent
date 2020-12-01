@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Magra&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -13,7 +14,8 @@ body {
 }
 
 .footer {
-    box-shadow: 3px 2px 10px 0px #ddd;
+    box-shadow: 0px -15px 0px 1px #ddd;
+    margin-top: 10px;
 }
 
 .footer_left {
@@ -78,4 +80,96 @@ body {
 
 .for_register {
     margin-top: 65px;
+}
+
+.h1_event {
+    margin-left: 175px;
+}
+
+.file_upload_left {
+    width: 400px;
+    margin-top: 5px;
+    margin-left: 90px;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    padding-bottom: 290px;
+    background-color: #0E3C4D;
+}
+
+.form_add_left {
+    background-color: #ffffff;
+    margin-left: 35px;
+}
+
+.img_add {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 220px;
+    width: 45px;
+}
+
+.file_upload_right {
+    width: 500px;
+    margin-top: 20px;
+    margin-left: -100px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2px 3px #ddd;
+}
+
+.form_add_right {
+    padding-top: 20px;
+    margin-left: 50px;
+}
+
+.btn_add {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.a_add {
+    font-size: 20px;
+    color: black;
+    margin-left: auto;
+    margin-right: 150px;
+    padding-bottom: 20px;
+}
+
+.form_add_right_static {
+    border-bottom: 1px solid #0E3C4D;
+    margin-left: -50px;
+    width: 220px;
+}
+
+.form_add_right_static input {
+    margin-left: 50px;
+}
+
+.form_add_right_input {
+    border-bottom: 1px solid #0E3C4D;
+}
+
+.form-group input,
+.form-group textarea {
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+input:focus {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+.form_add_right_link {
+    width: 485px;
+    margin-left: -50px;
+    border-radius: 0px 0px 30px 0px;
+    background-color: #2AA8D8;
+}
+
+.form_add_right_link input {
+    margin-left: 140px;
 }
