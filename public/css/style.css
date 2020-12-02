@@ -64,6 +64,10 @@ body {
     margin-top: 220px;
 }
 
+.img_jumbotron {
+    width: 100%;
+}
+
 .input_login {
     height: 50px;
 }
@@ -172,4 +176,20 @@ input:focus {
 
 .form_add_right_link input {
     margin-left: 140px;
+}
+
+.jumbotron {
+    margin-bottom: 150px;
+}
+
+.desc_jumbotron {
+    float: right;
+    padding-top: 25px;
+    padding-left: 75px;
+}
+
+.desc_jumbotron p,
+.desc_jumbotron a {
+    font-size: 43px;
+    font-weight: 100;
 }

@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 @section('title', 'Add Event')
 
@@ -131,7 +131,7 @@
                     </div>
                     <button type="submit" class="btn_add btn btn-danger">Kirim</button>
                 </div>
-                <a href="#" class="a_add">Kembali</a>
+                <a href="/" class="a_add">Kembali</a>
             </div>
         </div>
     </div>

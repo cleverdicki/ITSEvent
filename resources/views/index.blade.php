@@ -28,7 +28,7 @@
             <button type="button" class="btn btn-danger btn-lg btn-block">Masuk</button>
             <h6 class="mt-4">Belum punya akun?<a href="/register" style="color: red"> Daftar sekarang!</a></h6>
           </div>
-        </form>
+      </form>
       <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
     </div>
 
