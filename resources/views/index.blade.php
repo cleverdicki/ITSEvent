@@ -13,23 +13,31 @@
   </head>
   <body>
     <div class="container">
-      <form class="form_login_register" action="{{ route('loginUser')}}" method="post">
-        @csrf
-          <div class="for_login">
-            <h1 class="h1_login">Login</h1>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control input_login" id="password" name="password">
-            </div>
-            <button type="submit" class="btn btn-danger btn-lg btn-block">Masuk</button>
-            <h6 class="mt-4">Belum punya akun?<a href="{{ route('registration')}}" style="color: red"> Daftar sekarang!</a></h6>
+      <div class="row">
+        <div class="col-md-6">
+          <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
+        </div>
+        <div class="col-md-6">
+          <div class="form_login_right">
+            <form class="form_login_register" action="{{ route('loginUser')}}" method="post">
+              @csrf
+              <h1 class="h1_login">Login</h1>
+              <div class="form_input_login">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control input_login" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg btn-block button_login">Masuk</button>
+                <h6 class="h6_login mt-4">Belum punya akun?<a href="{{ route('registration')}}" style="color: red"> Daftar sekarang!</a></h6>
+              </div>
+            </form>
           </div>
-      </form>
-      <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -8,41 +8,58 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
-
     <title>Register</title>
   </head>
   <body>
     <div class="container">
-      <form class="form_login_register" action="{{ route('registrationStore')}}" method="post">
-        @csrf
-          <div class="for_register">
+      <div class="row">
+        <div class="col-md-6">
+          <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
+        </div>
+        <div class="col-md-6">
+          <div class="form_register_right">
+            <form class="form_login_register" action="{{ route('registrationStore')}}" method="post">
+              @csrf
               <h1 class="h1_register">Daftar</h1>
               <div class="form-group">
-                  <label for="exampleInputEmail1">Nama</label>
-                  <input type="text" class="form-control input_login" id="name" name="name">
+                <label for="exampleInputEmail1">Nama</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nama">
               </div>
               <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
               </div>
               <div class="form-group">
-                  <label for="exampleInputEmail1">NRP</label>
-                  <input type="text" class="form-control input_login" id="nrp" name="nrp">
+                <label for="exampleInputEmail1">NRP</label>
+                <input type="text" class="form-control" id="nrp" name="nrp" placeholder="NRP">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Kata sandi</label>
-                <input type="password" class="form-control input_login" id="password" name="password">
+                <input type="password" class="form-control password" id="password" name="password" placeholder="Kata sandi">
               </div>
               <div class="form-group">
-                  <label for="exampleInputEmail1">Masukkan ulang kata sandi</label>
-                  <input type="password" class="form-control input_login" id="repassword" name="">
+                <label for="exampleInputEmail1">Masukkan ulang kata sandi</label>
+                <input type="password" class="form-control repassword" id="repassword" name="" placeholder="Masukkan ulang kata sandi">
               </div>
-              <button type="submit" class="btn btn-danger btn-lg btn-block mt-4">Daftar</button>
-              <h6 class="mt-4">Sudah punya akun?<a href="{{ route('login')}}" style="color: red"> Login sekarang!</a></h6>
-            </div>
-        </form>
-      <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
+                <button type="submit" class="btn btn-danger btn-lg btn-block mt-4">Daftar</button>
+                <h6 class="h6_login mt-4">Sudah punya akun?<a href="{{ route('login')}}" style="color: red"> Login sekarang!</a></h6>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+    <script>
+      document.querySelector('.btn').onclick = function() {
+        var password = document.querySelector('.password').value,
+         confirmPassword = document.querySelector('.repassword').value;
+
+        if (password != confirmPassword) {
+          alert("Password tidak sesuai");
+          return false;
+        }
+        return true;
+      }
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
