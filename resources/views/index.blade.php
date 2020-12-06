@@ -13,20 +13,20 @@
   </head>
   <body>
     <div class="container">
-      <form class="form_login_register">
+      <form class="form_login_register" action="{{ route('loginUser')}}" method="post">
+        @csrf
           <div class="for_login">
             <h1 class="h1_login">Login</h1>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email or NRP</label>
-              <input type="email" class="form-control input_login" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control input_login" id="exampleInputPassword1">
+              <input type="password" class="form-control input_login" id="password" name="password">
             </div>
-            <a href="#" class="float-right mb-3" style="color: red">Lupa kata sandi?</a>
-            <button type="button" class="btn btn-danger btn-lg btn-block">Masuk</button>
-            <h6 class="mt-4">Belum punya akun?<a href="/register" style="color: red"> Daftar sekarang!</a></h6>
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Masuk</button>
+            <h6 class="mt-4">Belum punya akun?<a href="{{ route('registration')}}" style="color: red"> Daftar sekarang!</a></h6>
           </div>
       </form>
       <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">

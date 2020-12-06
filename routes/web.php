@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Monolog\Handler\RotatingFileHandler;
+use app\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
-});
+    return view('index');
+})->name('login');
 
 Route::get('/register', function () {
     return view('register');
@@ -23,4 +25,18 @@ Route::get('/register', function () {
 
 Route::get('/submitEvent', function () {
     return view('event.createEvent');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/login', 'App\Http\Controllers\UsersController@loginPage')->name('login');
+Route::post('/loginUser', 'App\Http\Controllers\UsersController@login')->name('loginUser');
+Route::get('/logoutUser', 'App\Http\Controllers\UsersController@logout')->name('logoutUser');
+Route::get('/registration', 'App\Http\Controllers\UsersController@registration')->name('registration');
+Route::post('/registrationStore', 'App\Http\Controllers\UsersController@registrationStore')->name('registrationStore');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'App\Http\Controllers\EventsController@index')->name('dashboard');
 });

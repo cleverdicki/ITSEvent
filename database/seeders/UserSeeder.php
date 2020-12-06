@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
@@ -17,8 +18,10 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Admin',
             'level' => 'admin',
+            'nrp' => 000000,
             'email' => 'admin@admin.com',
-            'password' => 'adminUser',
+            'password' => bcrypt('adminUser'),
+            'remember_token' => Str::random(60),
         ]);
     }
 }

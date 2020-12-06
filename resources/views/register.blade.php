@@ -13,30 +13,32 @@
   </head>
   <body>
     <div class="container">
-      <form class="form_login_register">
+      <form class="form_login_register" action="{{ route('registrationStore')}}" method="post">
+        @csrf
           <div class="for_register">
               <h1 class="h1_register">Daftar</h1>
               <div class="form-group">
                   <label for="exampleInputEmail1">Nama</label>
-                  <input type="text" class="form-control input_login" id="name_user" name="name_user">
+                  <input type="text" class="form-control input_login" id="name" name="name">
               </div>
               <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control input_login" id="email_user" name="email_user" aria-describedby="emailHelp">
+                  <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp">
               </div>
               <div class="form-group">
                   <label for="exampleInputEmail1">NRP</label>
-                  <input type="text" class="form-control input_login" id="nrp_user" name="nrp_user">
+                  <input type="text" class="form-control input_login" id="nrp" name="nrp">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Kata sandi</label>
-                <input type="password" class="form-control input_login" id="password_user" name="password_user">
+                <input type="password" class="form-control input_login" id="password" name="password">
               </div>
               <div class="form-group">
                   <label for="exampleInputEmail1">Masukkan ulang kata sandi</label>
-                  <input type="password" class="form-control input_login" id="repassword_user" name="">
+                  <input type="password" class="form-control input_login" id="repassword" name="">
               </div>
-              <button type="button" class="btn btn-danger btn-lg btn-block mt-4">Daftar</button>
+              <button type="submit" class="btn btn-danger btn-lg btn-block mt-4">Daftar</button>
+              <h6 class="mt-4">Sudah punya akun?<a href="{{ route('login')}}" style="color: red"> Login sekarang!</a></h6>
             </div>
         </form>
       <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">

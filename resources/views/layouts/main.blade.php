@@ -25,6 +25,7 @@
                     <a class="nav-link mr-3" href="#">Home</a>
                     <a class="nav-link mr-3" href="#">Login</a>
                     <a class="nav-link mr-3" href="#">Register</a>
+                    <a class="nav-link mr-3" href="{{ route('logoutUser')}}">Logout</a>
                 </div>
             </div>
         </div>

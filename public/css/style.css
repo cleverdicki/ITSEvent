@@ -153,8 +153,8 @@ body {
     border-bottom: 1px solid #0E3C4D;
 }
 
-.form-group input,
-.form-group textarea {
+.form_add_right input,
+.form_add_right textarea {
     text-decoration: none;
     border: none;
     background: none;
