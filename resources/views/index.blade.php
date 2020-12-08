@@ -9,36 +9,59 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
 
-    <title>Login</title>
+    <title>ITSEvent</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ route('index')}}">
+                <img src="{{ asset('images/logo.png') }}" width="80px" height="10%" alt="ITSEvent" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link mr-3" href="{{ route('index')}}">Home</a>
+                    <a class="nav-link mr-3" href="{{ route('login')}}">Login</a>
+                    <a class="nav-link mr-3" href="{{ route('registration')}}">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img class="img_login" src="{{ asset('images/logo.png') }}" alt="ITSEvent">
-        </div>
-        <div class="col-md-6">
-          <div class="form_login_right">
-            <form class="form_login_register" action="{{ route('loginUser')}}" method="post">
-              @csrf
-              <h1 class="h1_login">Login</h1>
-              <div class="form_input_login">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control input_login" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron mt-3">
+                    <div class="row">
+                        <div class="col-md 6 img_jumbotron">
+                            <img src="{{ asset('images/logo.png') }}" class="img_jumbotron" alt="ITSEvent">
+                        </div>
+                        <div class="col-md-6 desc_jumbotron">
+                            <p class="lead">Web yang menyediakan jadwal event - event yang ada di ITS.</p>
+                            <a href="{{ route('submitEvent')}}">Submit Event</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control input_login" id="password" name="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-danger btn-lg btn-block button_login">Masuk</button>
-                <h6 class="h6_login mt-4">Belum punya akun?<a href="{{ route('registration')}}" style="color: red"> Daftar sekarang!</a></h6>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </div>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="footer_left">
+                    <h6>Narahubung: LINE: itsevent</h6>
+                    <h6 class="h6_footer_left">Instagram: itsevent</h6>
+                    <h6 class="h6_footer_left">Email: itsevent@gmail.com</h6>
+                </div>
+                <div class="footer_right">
+                    <h6>Disponsori oleh: BEM ITS</h6>
+                    <h6 class="h6_footer_right">Ditmawa ITS</h6>
+                    <h6 class="h6_footer_right">Kelompok A08 MPPL</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

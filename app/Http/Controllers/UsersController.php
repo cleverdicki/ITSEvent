@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function loginPage()
     {
-        return view('index');
+        return view('login');
     }
 
     public function login(Request $request)
@@ -26,7 +26,7 @@ class UsersController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('login');
+        return redirect('/');
     }
 
     public function registration()

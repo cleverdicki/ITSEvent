@@ -17,7 +17,7 @@
                             <div class="col-md-11">
                                 <div class="form-group form_add_left">
                                     <label for="exampleFormControlFile1">Example file input</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="event_photo">
                                 </div>
                             </div>
                         </form> 
@@ -29,18 +29,18 @@
                             <div class="form_add_right">
                                 <div class="col-md-11">
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="title_event" name="title_event" placeholder="*masukkan nama event">
+                                        <input type="text" class="form-control" id="title_event" name="event_name" placeholder="*masukkan nama event">
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Deskripsi Event">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <textarea class="form-control" id="description_event" name="description_event" rows="4" placeholder="*masukkan deskripsi event"></textarea>
+                                        <textarea class="form-control" id="description_event" name="event_desc" rows="4" placeholder="*masukkan deskripsi event"></textarea>
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Tanggal Event">
                                     </div>
-                                    <input type="text" id="date_event" name="date_event" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="01-01-2000" style="display: none;">
+                                    <input type="text" id="date_event" name="event_date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="01-01-2000" style="display: none;">
                                     <span class="combodate" style="display: inline">
                                         <select class="day " style="width: auto;">
                                             <option value=""></option>
@@ -114,16 +114,16 @@
                                         <input type="text" readonly class="form-control-plaintext" value="Harga Tiket Masuk">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="price_event" name="price_event" placeholder="*masukkan harga event">
+                                        <input type="text" class="form-control" id="price_event" name="event_price" placeholder="*masukkan harga event">
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Diselenggarakan oleh">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="organizer_event" name="organizer_event" placeholder="*masukkan penyelenggara event">
+                                        <input type="text" class="form-control" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event">
                                     </div>
                                     <div class="form-group form_add_right_link">
-                                        <input type="text" class="form-control" id="link_event" name="link_event" placeholder="*link untuk membeli tiket">
+                                        <input type="text" class="form-control" id="link_event" name="event_link" placeholder="*link untuk membeli tiket">
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                     </div>
                     <button type="submit" class="btn_add btn btn-danger">Kirim</button>
                 </div>
-                <a href="/" class="a_add">Kembali</a>
+                <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
             </div>
         </div>
     </div>

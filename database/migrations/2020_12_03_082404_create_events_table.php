@@ -18,6 +18,9 @@ class CreateEventsTable extends Migration
             $table->string('event_name');
             $table->string('event_desc');
             $table->date('event_date');
+            $table->string('event_price');
+            $table->string('event_organizer');
+            $table->string('event_link');
             $table->string('event_photo');
             $table->timestamps();
         });

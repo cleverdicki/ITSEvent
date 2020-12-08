@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-6 desc_jumbotron">
                         <p class="lead">Web yang menyediakan jadwal event - event yang ada di ITS.</p>
-                        <a href="/submitEvent">Submit Event</a>
+                        <a href="{{ route('submitEvent')}}">Submit Event</a>
                     </div>
                 </div>
             </div>
