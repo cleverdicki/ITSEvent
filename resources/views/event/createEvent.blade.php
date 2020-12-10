@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Add Event')
+@section('title', 'Add Event ~ ITSEvent')
 
 @section('content')
 <div class="container">
@@ -8,39 +8,40 @@
         <div class="col-md-12">
             <h1 class="h1_event mt-2">Submit Event</h1>
         </div>
-        <div class="col-md-12">
-            <div class="row" style="position: relative;">
-                <div class="col-md-6" style="z-index: 1;">
-                    <div class="file_upload_left">
-                        <form>
+        <form action="{{ route('storeEvent')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="col-md-12">
+                <div class="row" style="position: relative;">
+                    <div class="col-md-6" style="z-index: 1;">
+                        <div class="file_upload_left">
                             <img src="{{ asset('images/whiteLogo.png') }}" alt="ITSEvent" class="img_add">
                             <div class="col-md-11">
                                 <div class="form-group form_add_left">
                                     <label for="exampleFormControlFile1">Example file input</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="event_photo">
+                                    <input type="file" class="form-control-file @error('event_image') is-invalid @enderror" id="event_photo" name="event_image">
                                 </div>
                             </div>
-                        </form> 
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6" style="z-index: 0;">
-                    <div class="file_upload_right">
-                        <form>
+                    <div class="col-md-6" style="z-index: 0;">
+                        <div class="file_upload_right">
                             <div class="form_add_right">
                                 <div class="col-md-11">
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="title_event" name="event_name" placeholder="*masukkan nama event">
+                                        <input type="text" class="form-control @error('event_name') is-invalid @enderror" id="title_event" name="event_name" placeholder="*masukkan nama event" value="{{ old('event_name') }}">
+                                        @error('event_name') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Deskripsi Event">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <textarea class="form-control" id="description_event" name="event_desc" rows="4" placeholder="*masukkan deskripsi event"></textarea>
+                                        <textarea class="form-control" id="description_event @error('event_desc') is-invalid @enderror" name="event_desc" rows="4" placeholder="*masukkan deskripsi event" value="{{ old('event_desc') }}"></textarea>
+                                        @error('event_desc') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Tanggal Event">
                                     </div>
-                                    <input type="text" id="date_event" name="event_date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="01-01-2000" style="display: none;">
+                                    <input type="text" id="event_date" name="event_date" data-format="DD-MM-YYYY" data-template="MMM YYYY" value="01-01-2000" style="display: none;">
                                     <span class="combodate" style="display: inline">
                                         <select class="day " style="width: auto;">
                                             <option value=""></option>
@@ -114,26 +115,28 @@
                                         <input type="text" readonly class="form-control-plaintext" value="Harga Tiket Masuk">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="price_event" name="event_price" placeholder="*masukkan harga event">
+                                        <input type="text" class="form-control @error('event_price') is-invalid @enderror" id="event_price" name="event_price" placeholder="*masukkan harga event" value="{{ old('event_price') }}">
+                                        @error('event_price') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="form-group form_add_right_static">
                                         <input type="text" readonly class="form-control-plaintext" value="Diselenggarakan oleh">
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event">
+                                        <input type="text" class="form-control @error('event_organizer') is-invalid @enderror" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event" value="{{ old('event_organizer') }}">
+                                        @error('event_organizer') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="form-group form_add_right_link">
-                                        <input type="text" class="form-control" id="link_event" name="event_link" placeholder="*link untuk membeli tiket">
+                                        <input type="text" class="form-control @error('event_link') is-invalid @enderror" id="event_link" name="event_link" placeholder="*link untuk membeli tiket">
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <button type="submit" class="btn_add btn btn-danger">Kirim</button>
                 </div>
-                <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
             </div>
-        </div>
+            <button type="submit" class="btn_add btn btn-danger">Kirim</button>
+            <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
+        </form>
     </div>
 </div>
 @endsection

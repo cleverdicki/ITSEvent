@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
 {
@@ -14,7 +15,13 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $event = Event::all();
+        return view('dashboard', compact('event'));
+    }
+
+    public function listEvent()
+    {
+        return view('admin.listEvent');
     }
 
     /**
@@ -35,7 +42,34 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'event_name' => 'required',
+            'event_desc' => 'required',
+            'event_date' => 'required',
+            'event_price' => 'required',
+            'event_organizer' => 'required',
+            'event_link' => 'required',
+            'event_image' => 'required'
+        ]);
+
+        $saveImg = $request->event_image;
+        $imgName = time() . rand(100, 999) . "." . $saveImg->getClientOriginalName();
+
+        $event = new Event;
+        $event->event_name = $request->event_name;
+        $event->event_desc = $request->event_desc;
+        $event->event_date = $request->event_date;
+        $event->event_price = $request->event_price;
+        $event->event_organizer = $request->event_organizer;
+        $event->event_link = $request->event_link;
+        $event->event_image = $request->event_image;
+        $event->event_status = 'no';
+
+        $saveImg->move(public_path() . '/img', $imgName);
+        $event->save();
+
+        return redirect('dashboard');
     }
 
     /**

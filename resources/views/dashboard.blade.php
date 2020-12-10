@@ -17,6 +17,8 @@
                     </div>
                 </div>
             </div>
+            @foreach ( $event as $evt)
+            @endforeach
         </div>
     </div>
 </div>

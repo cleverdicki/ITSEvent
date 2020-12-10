@@ -23,6 +23,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link mr-3" href="{{ route('dashboard')}}">Home</a>
+                    
+                    @if (auth()->user()->level == "admin")
+                    <a class="nav-link mr-3" href="{{ route('listEvent')}}">List Events</a>
+                    @endif
+                    
                     <a class="nav-link mr-3" href="{{ route('logoutUser')}}">Logout</a>
                 </div>
             </div>

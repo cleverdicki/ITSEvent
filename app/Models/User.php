@@ -22,6 +22,7 @@ class User extends Authenticatable
         'nrp',
         'email',
         'password',
+        'remember_token'
     ];
 
     /**
