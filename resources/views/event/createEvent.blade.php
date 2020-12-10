@@ -10,7 +10,6 @@
         </div>
         <form action="{{ route('storeEvent')}}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="col-md-12">
                 <div class="row" style="position: relative;">
                     <div class="col-md-6" style="z-index: 1;">
                         <div class="file_upload_left">
@@ -31,15 +30,15 @@
                                         <input type="text" class="form-control @error('event_name') is-invalid @enderror" id="title_event" name="event_name" placeholder="*masukkan nama event" value="{{ old('event_name') }}">
                                         @error('event_name') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
-                                    <div class="form-group form_add_right_static">
-                                        <input type="text" readonly class="form-control-plaintext" value="Deskripsi Event">
+                                    <div class="p_createEvent mt-3">
+                                        <p class="card-text titleCreateEvent">Deskripsi Event</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
                                         <textarea class="form-control" id="description_event @error('event_desc') is-invalid @enderror" name="event_desc" rows="4" placeholder="*masukkan deskripsi event" value="{{ old('event_desc') }}"></textarea>
                                         @error('event_desc') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
-                                    <div class="form-group form_add_right_static">
-                                        <input type="text" readonly class="form-control-plaintext" value="Tanggal Event">
+                                    <div class="p_createEvent mt-3">
+                                        <p class="card-text titleCreateEvent">Tanggal Event</p>
                                     </div>
                                     <input type="text" id="event_date" name="event_date" data-format="DD-MM-YYYY" data-template="MMM YYYY" value="01-01-2000" style="display: none;">
                                     <span class="combodate" style="display: inline">
@@ -111,15 +110,15 @@
                                             $('#date').combodate();    
                                         });
                                     </script>
-                                    <div class="form-group form_add_right_static">
-                                        <input type="text" readonly class="form-control-plaintext" value="Harga Tiket Masuk">
+                                    <div class="p_createEvent mt-3">
+                                        <p class="card-text titleCreateEvent">Harga Tiket Masuk</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
                                         <input type="text" class="form-control @error('event_price') is-invalid @enderror" id="event_price" name="event_price" placeholder="*masukkan harga event" value="{{ old('event_price') }}">
                                         @error('event_price') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
-                                    <div class="form-group form_add_right_static">
-                                        <input type="text" readonly class="form-control-plaintext" value="Diselenggarakan oleh">
+                                    <div class="p_createEvent mt-3">
+                                        <p class="card-text titleCreateEvent">Penyelenggara</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
                                         <input type="text" class="form-control @error('event_organizer') is-invalid @enderror" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event" value="{{ old('event_organizer') }}">
@@ -133,7 +132,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <button type="submit" class="btn_add btn btn-danger">Kirim</button>
             <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
         </form>

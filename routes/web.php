@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth', 'checklevel:admin,user']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\EventsController@index')->name('dashboard');
     Route::get('/submitEvent', 'App\Http\Controllers\EventsController@create')->name('submitEvent');
     Route::post('/storeEvent', 'App\Http\Controllers\EventsController@store')->name('storeEvent');
+    Route::get('/detailEvent/{event}', 'App\Http\Controllers\EventsController@show');
 });
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/listEvent', 'App\Http\Controllers\EventsController@listEvent')->name('listEvent');

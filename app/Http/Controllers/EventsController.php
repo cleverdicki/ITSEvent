@@ -21,7 +21,8 @@ class EventsController extends Controller
 
     public function listEvent()
     {
-        return view('admin.listEvent');
+        $event = Event::all();
+        return view('admin.listEvent', compact('event'));
     }
 
     /**
@@ -63,7 +64,7 @@ class EventsController extends Controller
         $event->event_price = $request->event_price;
         $event->event_organizer = $request->event_organizer;
         $event->event_link = $request->event_link;
-        $event->event_image = $request->event_image;
+        $event->event_image = $imgName;
         $event->event_status = 'no';
 
         $saveImg->move(public_path() . '/img', $imgName);
@@ -80,7 +81,7 @@ class EventsController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('event.detailEvent', compact('event'));
     }
 
     /**
