@@ -16,6 +16,12 @@ class EventsController extends Controller
     public function index()
     {
         $event = Event::all();
+        return view('index', compact('event'));
+    }
+
+    public function dashboard()
+    {
+        $event = Event::all();
         return view('dashboard', compact('event'));
     }
 
@@ -102,10 +108,25 @@ class EventsController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update($event)
     {
-        //
+        $update = Event::findorfail($event);
+        $update->event_status = 'yes';
+        $update->save();
+
+        return redirect('dashboard');
     }
+
+    public function updateNo($event)
+    {
+        $update = Event::findorfail($event);
+        $update->event_status = 'no';
+        $update->save();
+
+        return redirect('dashboard');
+    }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -113,8 +134,17 @@ class EventsController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($event)
     {
-        //
+        $delete = Event::findorfail($event);
+
+        $file = public_path('/img/') . $delete->event_image;
+        // Check for exsiting image
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+
+        $delete->delete();
+        return redirect('listEvent');
     }
 }

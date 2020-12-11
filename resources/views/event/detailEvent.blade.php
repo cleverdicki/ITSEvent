@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-            <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
+        <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
     </div>
 </div>
 @endsection

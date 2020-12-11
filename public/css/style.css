@@ -197,10 +197,6 @@ input:focus {
     margin-left: 140px;
 }
 
-.jumbotron {
-    margin-bottom: 150px;
-}
-
 .desc_jumbotron {
     float: right;
     padding-top: 25px;
@@ -222,6 +218,11 @@ input:focus {
     margin-left: -50px;
     width: 220px;
     margin-bottom: 10px;
+}
+
+.btn_detailEvent {
+    padding-left: 60px;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 767.98px) {
