@@ -19,14 +19,16 @@
       </div>
       @foreach ( $event as $evt)
       @if ($evt->event_status == 'yes')
-      <div class="card mb-3" style="max-width: 540px; margin-left:250px; border:none;">
+      <div class="card mb-3 mt-3" style="max-width: 700px; margin-left:250px; border:none;">
+        <p style="font-weight: bold;">{{ $evt->event_date}}</p>
         <div class="row">
-          <div class="col-md-7">
-            <img src="{{ asset('img/'.$evt->event_image)}}" height="400px" width="285px" alt="">
+          <div class="col-md-4">
+            <img src="{{ asset('img/'.$evt->event_image)}}" height="300px" width="200px" alt="">
           </div>
-          <div class="col-md-5">
+          <div class="col-md-8">
             <div class="card-body">
               <p class="card-text">{{ $evt->event_desc}}</p>
+              <a href="{{ url('detailEvent',$evt->id)}}"><button class="btn btn-primary">Detail Event</button></a>
             </div>
           </div>
         </div>

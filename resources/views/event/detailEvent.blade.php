@@ -13,7 +13,7 @@
                 <div class="file_detail_left">
                     <img src="{{ asset('images/whiteLogo.png') }}" alt="ITSEvent" class="img_detail">
                     <div class="col-md-11">    
-                        <img src="{{ asset('img/'.$event->event_image)}}" height="400px" width="285px" alt="" style="margin-left: 55px">
+                        <img src="{{ asset('img/'.$event->event_image)}}" height="425px" width="285px" alt="" style="margin-left: 55px">
                     </div>
                 </div>
             </div>

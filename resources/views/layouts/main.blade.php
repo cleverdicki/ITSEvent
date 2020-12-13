@@ -37,15 +37,21 @@
     <footer>
         <div class="footer">
             <div class="container">
-                <div class="footer_left">
-                    <h6>Narahubung: LINE: itsevent</h6>
-                    <h6 class="h6_footer_left">Instagram: itsevent</h6>
-                    <h6 class="h6_footer_left">Email: itsevent@gmail.com</h6>
-                </div>
-                <div class="footer_right">
-                    <h6>Disponsori oleh: BEM ITS</h6>
-                    <h6 class="h6_footer_right">Ditmawa ITS</h6>
-                    <h6 class="h6_footer_right">Kelompok A08 MPPL</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Narahubung: LINE: itsevent</h6>
+                                <h6 class="h6_footer_left">Instagram: itsevent</h6>
+                                <h6 class="h6_footer_left">Email: itsevent@gmail.com</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Disponsori oleh: BEM ITS</h6>
+                                <h6 class="h6_footer_right">Ditmawa ITS</h6>
+                                <h6 class="h6_footer_right">Kelompok A08 MPPL</h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

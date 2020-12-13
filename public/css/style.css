@@ -7,6 +7,9 @@
 body {
     margin: 0;
     padding: 0;
+    position: relative;
+    padding-bottom: 150px;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -14,8 +17,11 @@ body {
 }
 
 .footer {
-    box-shadow: 0px -15px 0px 1px #ddd;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0px -1px 0px 1px #ddd;
+    padding: 20px;
 }
 
 .footer_left {
@@ -98,7 +104,7 @@ body {
 .file_detail_left {
     width: 430px;
     margin-left: 90px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     border-radius: 30px;
     background-color: #0E3C4D;
 }
