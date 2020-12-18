@@ -133,8 +133,8 @@
                     </div>
                 </div>
             <button type="submit" class="btn_add btn btn-danger">Kirim</button>
-            <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
         </form>
+        <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
     </div>
 </div>
 @endsection

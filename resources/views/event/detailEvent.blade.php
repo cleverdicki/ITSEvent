@@ -6,14 +6,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 mt-5 mb-3">
-            <h1 class="h1_event">Submit Event</h1>
+            <h1 class="h1_event">Detail Event</h1>
         </div>
         <div class="row" style="position: relative;">
             <div class="col-md-6" style="z-index: 1;">
                 <div class="file_detail_left">
                     <img src="{{ asset('images/whiteLogo.png') }}" alt="ITSEvent" class="img_detail">
                     <div class="col-md-11">    
-                        <img src="{{ asset('img/'.$event->event_image)}}" height="425px" width="285px" alt="" style="margin-left: 55px">
+                        <img src="{{ asset('img/'.$event->event_image)}}" class="img_detail_db" height="425px" width="285px" alt="">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                 <p class="card-text titleCreateEvent">Penyelenggara</p>
                             </div>
                             <p class="card-text fillEvent">{{ $event->event_organizer}}</p>
-                            <div class="form-group form_add_right_link">
+                            <div class="form-group form_detail_right_link">
                                 <a href="#" class="card-text titleCreateEvent"><button class="btn">{{ $event->event_link}}</button></a>
                             </div>
                         </div>

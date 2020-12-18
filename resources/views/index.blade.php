@@ -54,7 +54,7 @@
                 <div class="col-md-8">
                   <div class="card-body">
                     <p class="card-text">{{ $evt->event_desc}}</p>
-                    <a href="{{ url('detailEvent',$evt->id)}}"><button class="btn btn-primary">Detail Event</button></a>
+                    <a href="{{ url('detailEvent',$evt->id)}}"><button class="btn btn-primary btn_detail">Detail Event</button></a>
                   </div>
                 </div>
               </div>
