@@ -45,11 +45,11 @@
             </div>
             @foreach ( $event as $evt)
             @if ($evt->event_status == 'yes')
-            <div class="card mb-3 mt-3" style="max-width: 700px; margin-left:250px; border:none;">
-              <p style="font-weight: bold;">{{ $evt->event_date}}</p>
+            <div class="card mb-3 mt-3 shadow" style="max-width: 700px; margin-left:250px; border:none;">
+              <p class="p_event">{{ $evt->event_date}}</p>
               <div class="row">
                 <div class="col-md-4">
-                  <img src="{{ asset('img/'.$evt->event_image)}}" height="300px" width="200px" alt="">
+                  <img class="img_event" src="{{ asset('img/'.$evt->event_image)}}" height="300px" width="200px" alt="">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">

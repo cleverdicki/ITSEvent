@@ -252,6 +252,16 @@ input:focus {
     border: none;
 }
 
+.p_event {
+    font-weight: bold;
+    margin-left: 80px
+}
+
+.img_event {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 767.98px) {
     .h1_login,
     .h1_register {
