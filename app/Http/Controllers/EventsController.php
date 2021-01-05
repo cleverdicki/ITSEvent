@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class EventsController extends Controller
 {
@@ -53,7 +54,9 @@ class EventsController extends Controller
         $request->validate([
             'event_name' => 'required',
             'event_desc' => 'required',
-            'event_date' => 'required',
+            'day' => 'required',
+            'month' => 'required',
+            'year' => 'required',
             'event_price' => 'required',
             'event_organizer' => 'required',
             'event_link' => 'required',
@@ -66,7 +69,7 @@ class EventsController extends Controller
         $event = new Event;
         $event->event_name = $request->event_name;
         $event->event_desc = $request->event_desc;
-        $event->event_date = $request->event_date;
+        $event->event_date = $request->day . '-' . $request->month . '-' . $request->year;
         $event->event_price = $request->event_price;
         $event->event_organizer = $request->event_organizer;
         $event->event_link = $request->event_link;
@@ -98,7 +101,32 @@ class EventsController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        // $edit = Event::findorfail($event);
+        return view('event.updateEvent', compact('event'));
+    }
+
+    public function editStore(Request $request, $id)
+    {
+        $edit = Event::findorfail($id);
+        $updateImg = $edit->event_image;
+
+        if ($request->event_image != null) {
+            $request->event_image->move(public_path() . '/img', $updateImg);
+        }
+
+        $data = [
+            'event_name' => $request['event_name'],
+            'event_desc' => $request['event_desc'],
+            'event_date' => $request['day'] . '-' . $request['month'] . '-' . $request['year'],
+            'event_price' => $request['event_price'],
+            'event_organizer' => $request['event_organizer'],
+            'event_link' => $request['event_link'],
+            'event_image' => $updateImg,
+            'event_status' => 'no',
+        ];
+
+        $edit->update($data);
+        return redirect('listEvent');
     }
 
     /**

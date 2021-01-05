@@ -101,6 +101,15 @@ body {
     background-color: #0E3C4D;
 }
 
+.file_update_left {
+    width: 400px;
+    margin-top: 5px;
+    margin-left: 90px;
+    border-radius: 30px;
+    padding-bottom: 20px;
+    background-color: #0E3C4D;
+}
+
 .file_detail_left {
     width: 430px;
     margin-left: 90px;
@@ -118,6 +127,13 @@ body {
     margin-top: 15px;
     margin-left: 15px;
     padding-bottom: 200px;
+    width: 45px;
+}
+
+.img_update {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 10px;
     width: 45px;
 }
 
@@ -254,12 +270,17 @@ input:focus {
 
 .p_event {
     font-weight: bold;
-    margin-left: 80px
+    margin-left: 75px
 }
 
 .img_event {
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+.img_event_dashboard {
+    margin-left: 25px;
+    margin-bottom: 25px;
 }
 
 @media (max-width: 767.98px) {

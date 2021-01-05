@@ -19,8 +19,8 @@
       </div>
       @foreach ( $event as $evt)
       @if ($evt->event_status == 'yes')
-      <div class="card mb-3 mt-3 card_event">
-        <p style="font-weight: bold;">{{ $evt->event_date}}</p>
+      <div class="card mb-3 mt-3 shadow card_event">
+        <p class="p_event">{{ $evt->event_date}}</p>
         <div class="row">
           <div class="col-md-4">
             <img src="{{ asset('img/'.$evt->event_image)}}" class="img_event_dashboard" height="300px" width="200px" alt="">

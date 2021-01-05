@@ -34,6 +34,8 @@ Route::group(['middleware' => ['auth', 'checklevel:admin,user']], function () {
 });
 Route::group(['middleware' => ['auth', 'checklevel:admin']], function () {
     Route::get('/listEvent', 'App\Http\Controllers\EventsController@listEvent')->name('listEvent');
+    Route::get('/updateEvent/{event}', 'App\Http\Controllers\EventsController@edit')->name('updateEvent');
+    Route::post('/updateEvent/{event}', 'App\Http\Controllers\EventsController@editStore')->name('updateEvent');
     Route::get('/deleteEvent/{event}', 'App\Http\Controllers\EventsController@destroy')->name('deleteEvent');
     Route::get('/displayEvent/{event}', 'App\Http\Controllers\EventsController@update')->name('displayEvent');
     Route::get('/noDisplayEvent/{event}', 'App\Http\Controllers\EventsController@updateNo')->name('noDisplayEvent');

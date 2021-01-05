@@ -6,18 +6,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="h1_event mt-2">Submit Event</h1>
+            <h1 class="h1_event mt-2">Update Event</h1>
         </div>
-        <form action="{{ route('storeEvent')}}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('updateEvent', $event->id)}}" method="post" enctype="multipart/form-data">
             @csrf
                 <div class="row" style="position: relative;">
                     <div class="col-md-6" style="z-index: 1;">
-                        <div class="file_upload_left">
-                            <img src="{{ asset('images/whiteLogo.png') }}" alt="ITSEvent" class="img_add">
+                        <div class="file_update_left">
+                            <img src="{{ asset('images/whiteLogo.png') }}" alt="ITSEvent" class="img_update">
                             <div class="col-md-11">
                                 <div class="form-group form_add_left">
-                                    <label for="exampleFormControlFile1">Example file input</label>
-                                    <input type="file" class="form-control-file @error('event_image') is-invalid @enderror" id="event_photo" name="event_image">
+                                    <div class="form-group">    
+                                        <img src="{{ asset('img/'.$event->event_image)}}" class="img_update_db" height="425px" width="301px" alt="">
+                                    </div>
+                                    <input type="file" class="form-control-file @error('event_image') is-invalid @enderror" 
+                                    id="event_photo" name="event_image">
                                 </div>
                             </div>
                         </div>
@@ -27,14 +30,14 @@
                             <div class="form_add_right">
                                 <div class="col-md-11">
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control @error('event_name') is-invalid @enderror" id="title_event" name="event_name" placeholder="*masukkan nama event" value="{{ old('event_name') }}">
+                                        <input type="text" class="form-control @error('event_name') is-invalid @enderror" id="title_event" name="event_name" placeholder="*masukkan nama event" value="{{ $event->event_name }}">
                                         @error('event_name') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="p_createEvent mt-3">
                                         <p class="card-text titleCreateEvent">Deskripsi Event</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <textarea class="form-control" id="description_event @error('event_desc') is-invalid @enderror" name="event_desc" rows="4" placeholder="*masukkan deskripsi event" value="{{ old('event_desc') }}"></textarea>
+                                        <input class="form-control @error('event_desc') is-invalid @enderror" id="description_event" name="event_desc" rows="4" placeholder="*masukkan deskripsi event" value="{{ $event->event_desc }}"></textarea>
                                         @error('event_desc') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="p_createEvent mt-3">
@@ -105,25 +108,25 @@
                                         <p class="card-text titleCreateEvent">Harga Tiket Masuk</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control @error('event_price') is-invalid @enderror" id="event_price" name="event_price" placeholder="*masukkan harga event" value="{{ old('event_price') }}">
+                                        <input type="text" class="form-control @error('event_price') is-invalid @enderror" id="event_price" name="event_price" placeholder="*masukkan harga event" value="{{ $event->event_price }}">
                                         @error('event_price') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="p_createEvent mt-3">
                                         <p class="card-text titleCreateEvent">Penyelenggara</p>
                                     </div>
                                     <div class="form-group form_add_right_input">
-                                        <input type="text" class="form-control @error('event_organizer') is-invalid @enderror" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event" value="{{ old('event_organizer') }}">
+                                        <input type="text" class="form-control @error('event_organizer') is-invalid @enderror" id="organizer_event" name="event_organizer" placeholder="*masukkan penyelenggara event" value="{{ $event->event_organizer }}">
                                         @error('event_organizer') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                     </div>
                                     <div class="form-group form_add_right_link">
-                                        <input type="text" class="form-control @error('event_link') is-invalid @enderror" id="event_link" name="event_link" placeholder="*link untuk membeli tiket">
+                                        <input type="text" class="form-control @error('event_link') is-invalid @enderror" id="event_link" name="event_link" placeholder="*link untuk membeli tiket" value="{{ $event->event_link }}">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <button type="submit" class="btn_add btn btn-danger">Kirim</button>
+            <button type="submit" class="btn_add btn btn-danger">Update</button>
         </form>
         <a href="{{ route('dashboard')}}" class="a_add">Kembali</a>
     </div>
