@@ -79,7 +79,7 @@ class EventsController extends Controller
         $saveImg->move(public_path() . '/img', $imgName);
         $event->save();
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('success', 'Event berhasil diajukan!');
     }
 
     /**
@@ -126,7 +126,7 @@ class EventsController extends Controller
         ];
 
         $edit->update($data);
-        return redirect('listEvent');
+        return redirect('listEvent')->with('success', 'Event berhasil diupdate!');
     }
 
     /**
@@ -142,7 +142,7 @@ class EventsController extends Controller
         $update->event_status = 'yes';
         $update->save();
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('success', 'Event berhasil ditampilkan!');
     }
 
     public function updateNo($event)
@@ -151,7 +151,7 @@ class EventsController extends Controller
         $update->event_status = 'no';
         $update->save();
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('info', 'Event disembunyikan!');
     }
 
 
@@ -173,6 +173,6 @@ class EventsController extends Controller
         }
 
         $delete->delete();
-        return redirect('listEvent');
+        return redirect('listEvent')->with('warning', 'Event telah dihapus!');
     }
 }

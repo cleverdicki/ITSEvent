@@ -16,7 +16,7 @@
                       <a href="{{ url('updateEvent',$evt->id)}}" class="badge badge-secondary">Update</a>
                       <a href="{{ url('displayEvent',$evt->id)}}" class="badge badge-success">Display</a>
                       <a href="{{ url('noDisplayEvent',$evt->id)}}" class="badge badge-warning">Don't</a>
-                      <a href="{{ url('deleteEvent',$evt->id)}}" class="badge badge-danger">Delete</a>
+                      <a href="#modalDelete" data-toggle="modal" onclick="$('#modalDelete #formDelete').attr('action', '{{ url('deleteEvent',$evt->id)}}')" class="badge badge-danger">Delete</a>
                   </div>
                 </li>
                 @endforeach
@@ -25,3 +25,20 @@
     </div>
 </div>
 @endsection
+
+<div class="modal fade" id="modalDelete" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Yakin untuk menghapus data?</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+            <form id="formDelete" action="" method="GET">
+                <button class="btn btn-default" data-dismiss="modal">Tidak</button>
+                <button class="btn btn-danger" type="submit">Hapus</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

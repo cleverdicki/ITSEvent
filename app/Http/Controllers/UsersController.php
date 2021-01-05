@@ -20,6 +20,7 @@ class UsersController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('dashboard');
         }
+        alert()->error('Error', 'Email atau Password salah!');
         return redirect('login');
     }
 
@@ -47,6 +48,6 @@ class UsersController extends Controller
             'remember_token' => Str::random(60)
         ]);
 
-        return redirect('login');
+        return redirect('login')->with('success', 'Akun berhasil didaftarkan!');
     }
 }
